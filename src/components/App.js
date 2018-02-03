@@ -8,6 +8,7 @@ import './styles/App.css';
 export default class App extends Component {
   constructor() {
     super();
+    MailActions.loadMail();
     this.state = {
       mail: MailStore.getAll(),
     }
@@ -26,11 +27,15 @@ export default class App extends Component {
     });
   }
 
+  loadMail() {
+    MailActions.loadMail();
+  }
+
   render() {
     const { mail } = this.state;
 
     const MailList = mail.map((message) => {
-      return <li key={message.id}>{message.text}</li>
+      return <li key={message._id}>{message.subject}</li>
     });
 
     return (
@@ -38,6 +43,7 @@ export default class App extends Component {
         <button onClick={this.createMail.bind(this)}>Create</button>
         <h1>Mail</h1>
         <ul>{MailList}</ul>
+        <button onClick={this.loadMail.bind(this)}>Load</button>
       </div>
     );
   }

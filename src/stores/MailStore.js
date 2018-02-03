@@ -1,5 +1,4 @@
 import { EventEmitter } from 'events';
-import axios from 'axios';
 
 import dispatcher from '../dispatcher';
 
@@ -15,7 +14,7 @@ class MailStore extends EventEmitter {
     const id = Date.now();
     this.mail.push({
       id,
-      text
+      subject: text,
     });
     this.emit("change");
   }
@@ -28,12 +27,23 @@ class MailStore extends EventEmitter {
     // use axios method when we get to async redux in videos
   }
 
+  receiveMail(mail) {
+    this.mail = mail;
+    this.emit('change');
+  }
+
   handleActions(action) {
     console.log('MailStore received an action', action); // for testing
     switch(action.type) {
       case 'CREATE_MAIL': {  // also just for testing
         this.createMail(action.text);
+        break;
       }
+      case 'RECEIVE_MAIL': {
+        this.receiveMail(action.data);
+        break;
+      }
+      default: {}
     }
   }
 
