@@ -10,7 +10,7 @@ export default class App extends Component {
     super();
     MailActions.loadMail();
     this.state = MailStore.getState();
-    window.state = this.state;
+    window.MailStore = MailStore;
   }
 
   createMail() { // also a dummy function to show us how it's done
