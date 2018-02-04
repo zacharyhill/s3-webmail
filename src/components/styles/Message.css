@@ -18,6 +18,10 @@
   font-weight: 900;
 }
 
+.email .subject:hover {
+  text-decoration: underline;
+}
+
 .email .details {
   font-family: 'Ubuntu Mono';
   font-size: 1.2rem;
