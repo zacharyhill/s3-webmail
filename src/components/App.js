@@ -42,10 +42,14 @@ export default class App extends Component {
         <li
           className="email"
           key={id}
-          id={id}
-          onClick={this.showDetails.bind(this)}
         >
-          {message.subject}
+          <div
+            className="subject"
+            id={id}
+            onClick={this.showDetails.bind(this)}
+          >
+            {message.subject}
+          </div>
           <div
             className="details"
             style={display}  

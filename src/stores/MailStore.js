@@ -24,7 +24,7 @@ class MailStore extends EventEmitter {
   }
 
   displayDetails(id) {
-    this.displaying = id;
+    this.displaying = this.displaying === id ? null : id;
     this.emit('change');
   }
 
