@@ -1,3 +1,7 @@
 import { Dispatcher } from 'flux';
 
-export default new Dispatcher();
+const dispatcher = new Dispatcher();
+const dispatch = dispatcher.dispatch.bind(dispatcher);
+
+export default dispatcher;
+export { dispatch };

@@ -1,4 +1,4 @@
-import dispatcher from '../dispatcher';
+import { dispatch } from '../dispatcher';
 
 import axios from 'axios';
 const API = axios.create({
@@ -8,24 +8,26 @@ const API = axios.create({
     ** this method is NOT safe for deployment, change backend
     ** to use sessions to avoid this secuirty issue.
     */
-    'token': require('../../TEMP-TOKEN-FILE.js');
+    'token': require('../TEMP-TOKEN-FILE.js')
   }
 });
 
 export function createMail(text) {
-  dispatcher.dispatch({
+  dispatch({
     type: 'CREATE_MAIL',
     text,
   });
 }
 
 export function loadMail() {
-  dispatcher.dispatch({ type: 'FETCH_MAIL' });
+  dispatch({ type: 'FETCH_MAIL' });
   API.get('mail').then((mail) => {
     const { emails } = mail.data;
-    dispatcher.dispatch({
+    dispatch({
       type: 'RECEIVE_MAIL',
       data: emails,
     })
-  })
+  }).catch((e) => {
+    
+  });
 }
