@@ -69,6 +69,7 @@ class MailStore extends EventEmitter {
       }
       case 'DISPLAY_DETAILS': {
         this.displayDetails(action.id);
+        break;
       }
       default: {}
     }
