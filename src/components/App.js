@@ -35,7 +35,7 @@ export default class App extends Component {
   render() {
     const { mail } = this.state;
 
-    const MailList = mail.map((msg) => {
+    const MailList = mail.reverse().map((msg) => {
       return <Message key={msg._id} message={msg} displaying={this.state.displaying} />;
     });
 
