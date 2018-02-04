@@ -19,6 +19,13 @@ export function createMail(text) {
   });
 }
 
+export function displayDetails(id) {
+  dispatch({
+    type: 'DISPLAY_DETAILS',
+    id,
+  });
+}
+
 export function loadMail() {
   dispatch({ type: 'FETCH_MAIL' });
   API.get('mail').then((mail) => {

@@ -10,6 +10,7 @@ class MailStore extends EventEmitter {
     this.fetching = false;
     this.fetched = false;
     this.err = null;
+    this.displaying = null;
   }
 
   // this is a dummy function that shows us how to do this for later
@@ -20,6 +21,11 @@ class MailStore extends EventEmitter {
       subject: text,
     });
     this.emit("change");
+  }
+
+  displayDetails(id) {
+    this.displaying = id;
+    this.emit('change');
   }
 
   fetchMailError(err) {
@@ -33,6 +39,7 @@ class MailStore extends EventEmitter {
       fetching: this.fetching,
       fetched: this.fetched,
       err: this.err,
+      displaying: this.displaying,
     }
   }
 
@@ -59,6 +66,9 @@ class MailStore extends EventEmitter {
       case 'FETCH_MAIL_ERROR': {
         this.fetchMailError(action.err);
         break;
+      }
+      case 'DISPLAY_DETAILS': {
+        this.displayDetails(action.id);
       }
       default: {}
     }

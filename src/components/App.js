@@ -28,12 +28,7 @@ export default class App extends Component {
   }
 
   showDetails(e) {
-    const details = this.state.mail.filter((msg) => {
-      if (msg._id === e.target.id) {
-        return msg;
-      }
-    });
-    console.log(details);
+    MailActions.displayDetails(e.target.id);
   }
 
   render() {
@@ -41,13 +36,24 @@ export default class App extends Component {
 
     const MailList = mail.map((message) => {
       const id = message._id;
+      const displaying = (this.state.displaying === id);
+      const display = displaying ? { display: 'block' } : { display: 'none' };
       return (
         <li
+          className="email"
           key={id}
           id={id}
           onClick={this.showDetails.bind(this)}
         >
           {message.subject}
+          <div
+            className="details"
+            style={display}  
+          >
+            <ul>
+              <li>{message.text}</li>
+            </ul>
+          </div>
         </li>
       );
     });
