@@ -22,6 +22,11 @@ class MailStore extends EventEmitter {
     this.emit("change");
   }
 
+  fetchMailError(err) {
+    this.err = err;
+    this.emit('change');
+  }
+
   getState() {
     return {
       mail: this.mail,

@@ -27,7 +27,10 @@ export function loadMail() {
       type: 'RECEIVE_MAIL',
       data: emails,
     })
-  }).catch((e) => {
-    
+  }).catch((err) => {
+    dispatch({
+      type: 'FETCH_MAIL_ERROR',
+      err,
+    })
   });
 }
