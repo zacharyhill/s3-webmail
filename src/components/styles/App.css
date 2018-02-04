@@ -33,6 +33,18 @@ body {
   to { transform: rotate(360deg); }
 }
 
+li.email {
+  padding: 6px 0;
+}
+
+li.email .subject {
+  cursor: pointer;
+}
+
+li.email .subject:hover {
+  text-decoration: underline;
+}
+
 li.email .details {
   display: none;
 }
