@@ -1,0 +1,19 @@
+li.email {
+  padding: 6px 0;
+}
+
+li.email .subject {
+  cursor: pointer;
+}
+
+li.email .subject:hover {
+  text-decoration: underline;
+}
+
+li.email .details {
+  display: none;
+}
+
+.details li {
+  padding: 20px 5px;
+}
