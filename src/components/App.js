@@ -27,11 +27,29 @@ export default class App extends Component {
     MailActions.loadMail();
   }
 
+  showDetails(e) {
+    const details = this.state.mail.filter((msg) => {
+      if (msg._id === e.target.id) {
+        return msg;
+      }
+    });
+    console.log(details);
+  }
+
   render() {
     const { mail } = this.state;
 
     const MailList = mail.map((message) => {
-      return <li key={message._id}>{message.subject}</li>
+      const id = message._id;
+      return (
+        <li
+          key={id}
+          id={id}
+          onClick={this.showDetails.bind(this)}
+        >
+          {message.subject}
+        </li>
+      );
     });
 
     return (
