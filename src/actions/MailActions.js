@@ -44,7 +44,10 @@ export function loadMail() {
 
 export function getNewMail() {
   API.get('newMail').then((newMail) => {
-    loadMail();
+    const { newMessages } = newMail;
+    if (newMessages > 0) {
+      loadMail();
+    }
   }).catch((err) => {
     dispatch({
       type: 'FETCH_NEW_MAIL_ERROR',
