@@ -32,7 +32,7 @@ export function loadMail() {
     const { emails } = mail.data;
     dispatch({
       type: 'RECEIVE_MAIL',
-      data: emails,
+      data: emails.reverse(), // sort by date descending for now
     })
   }).catch((err) => {
     dispatch({
