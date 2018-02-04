@@ -1,19 +1,24 @@
-li.email {
-  padding: 6px 0;
+.email {
+  background-color: #eee;
+  border: 1px solid #333;
+  border-radius: 4px;
+  box-shadow: 1px 2px rgb(125, 125, 126);
+  margin: 5px auto;
+  padding: 15px;
+  max-width: 950px;
+  min-width: 450px;
 }
 
-li.email .subject {
+.email:hover {
+  background-color: #f9f9f9;
+}
+
+.email .subject {
   cursor: pointer;
+  font-weight: 900;
 }
 
-li.email .subject:hover {
-  text-decoration: underline;
-}
-
-li.email .details {
-  display: none;
-}
-
-.details li {
-  padding: 20px 5px;
+.email .details {
+  font-family: 'Ubuntu';
+  padding: 20px 0;
 }

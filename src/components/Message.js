@@ -13,23 +13,23 @@ export default class Message extends Component {
     const displaying = (this.props.displaying === id);
     const display = displaying ? { display: 'block' } : { display: 'none' };
     return (
-          <li
-            className="email"
-          >
-          <div
-            className="subject"
-            id={id}
-            onClick={this.showDetails.bind(this)}
-          >
-            {message.subject}
-          </div>
-          <div
-            className="details"
-            style={display}  
-          >
+      <div
+        className="email"
+      >
+        <div
+          className="subject"
+          id={id}
+          onClick={this.showDetails.bind(this)}
+        >
+          {message.subject}
+        </div>
+        <div
+          className="details"
+          style={display}  
+        >
           {message.text}
         </div>
-      </li>
+      </div>
     );
   }
 }

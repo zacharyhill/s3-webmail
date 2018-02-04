@@ -43,7 +43,7 @@ export default class App extends Component {
       <div>
         <button onClick={this.createMail.bind(this)}>Create</button>
         <h1>Mail</h1>
-        <ul>{MailList}</ul>
+        {MailList}
         <button onClick={this.getNewMail.bind(this)}>Load</button>
       </div>
     );
