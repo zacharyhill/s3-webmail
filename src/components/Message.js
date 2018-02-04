@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as MailActions from '../actions/MailActions';
+import './styles/Message.css';
 
 export default class Message extends Component {
   showDetails(event) {
@@ -26,9 +27,7 @@ export default class Message extends Component {
             className="details"
             style={display}  
           >
-          <ul>
-            <li>{message.text}</li>
-          </ul>
+          {message.text}
         </div>
       </li>
     );
