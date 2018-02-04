@@ -41,3 +41,14 @@ export function loadMail() {
     })
   });
 }
+
+export function getNewMail() {
+  API.get('newMail').then((newMail) => {
+    loadMail();
+  }).catch((err) => {
+    dispatch({
+      type: 'FETCH_NEW_MAIL_ERROR',
+      err,
+    });
+  });
+}

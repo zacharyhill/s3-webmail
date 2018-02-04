@@ -28,6 +28,10 @@ export default class App extends Component {
     MailActions.loadMail();
   }
 
+  getNewMail() {
+    MailActions.getNewMail();
+  }
+
   render() {
     const { mail } = this.state;
 
@@ -40,7 +44,7 @@ export default class App extends Component {
         <button onClick={this.createMail.bind(this)}>Create</button>
         <h1>Mail</h1>
         <ul>{MailList}</ul>
-        <button onClick={this.loadMail.bind(this)}>Load</button>
+        <button onClick={this.getNewMail.bind(this)}>Load</button>
       </div>
     );
   }
