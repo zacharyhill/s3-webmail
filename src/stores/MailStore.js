@@ -23,7 +23,7 @@ class MailStore extends EventEmitter {
     this.emit("change");
   }
 
-  displayDetails(id) {
+  toggleDetails(id) {
     this.displaying = this.displaying === id ? null : id;
     this.emit('change');
   }
@@ -67,8 +67,8 @@ class MailStore extends EventEmitter {
         this.fetchMailError(action.err);
         break;
       }
-      case 'DISPLAY_DETAILS': {
-        this.displayDetails(action.id);
+      case 'TOGGLE_DETAILS': {
+        this.toggleDetails(action.id);
         break;
       }
       default: {}

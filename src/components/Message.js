@@ -5,7 +5,7 @@ import './styles/Message.css';
 
 export default class Message extends Component {
   showDetails(event) {
-    MailActions.displayDetails(event.target.id);
+    MailActions.toggleDetails(event.target.id);
   }
   
   render() {

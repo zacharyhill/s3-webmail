@@ -19,9 +19,9 @@ export function createMail(text) {
   });
 }
 
-export function displayDetails(id) {
+export function toggleDetails(id) {
   dispatch({
-    type: 'DISPLAY_DETAILS',
+    type: 'TOGGLE_DETAILS',
     id,
   });
 }
