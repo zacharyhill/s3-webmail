@@ -7,6 +7,9 @@ class MailStore extends EventEmitter {
   constructor() {
     super();
     this.mail = [];
+    this.fetching = false;
+    this.fetched = false;
+    this.err = null;
   }
 
   // this is a dummy function that shows us how to do this for later
@@ -19,8 +22,13 @@ class MailStore extends EventEmitter {
     this.emit("change");
   }
 
-  getAll() {
-    return this.mail;
+  getState() {
+    return {
+      mail: this.mail,
+      fetching: this.fetching,
+      fetched: this.fetched,
+      err: this.err,
+    }
   }
 
   getNew() {
@@ -41,6 +49,10 @@ class MailStore extends EventEmitter {
       }
       case 'RECEIVE_MAIL': {
         this.receiveMail(action.data);
+        break;
+      }
+      case 'FETCH_MAIL_ERROR': {
+        this.fetchMailError(action.err);
         break;
       }
       default: {}

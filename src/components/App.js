@@ -9,9 +9,7 @@ export default class App extends Component {
   constructor() {
     super();
     MailActions.loadMail();
-    this.state = {
-      mail: MailStore.getAll(),
-    }
+    this.state = MailStore.getState();
     window.state = this.state;
   }
 
@@ -21,9 +19,7 @@ export default class App extends Component {
 
   componentWillMount() {
     MailStore.on("change", () => {
-      this.setState({
-        mail: MailStore.getAll(),
-      })
+      this.setState(MailStore.getState());
     });
   }
 
