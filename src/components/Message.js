@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as MailActions from '../actions/MailActions';
+import Attachments from './Attachments';
 import './styles/Message.css';
 
 export default class Message extends Component {
@@ -27,7 +28,14 @@ export default class Message extends Component {
           className="details"
           style={display}  
         >
-          {message.text}
+          <div>
+            <span className="title">From:</span>
+            {message.from.text}
+          </div>
+          <div>
+            {message.text}
+          </div>
+          <Attachments attachments={message.attachments} />
         </div>
       </div>
     );
