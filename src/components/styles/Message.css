@@ -9,7 +9,7 @@
   min-width: 450px;
 }
 
-.email:hover {
+.email:hover, .email.active {
   background-color: #f9f9f9;
 }
 
@@ -19,6 +19,16 @@
 }
 
 .email .details {
-  font-family: 'Ubuntu';
-  padding: 20px 0;
+  font-family: 'Ubuntu Mono';
+  font-size: 1.2rem;
+  padding: 20px;
+}
+
+.email .details div {
+  padding: 10px 0;
+}
+
+.email .details div span.title {
+  display: block;
+  font-size: 1.1em;
 }
