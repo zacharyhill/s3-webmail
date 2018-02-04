@@ -48,8 +48,10 @@ class MailStore extends EventEmitter {
   }
 
   receiveMail(mail) {
-    this.mail = mail;
-    this.emit('change');
+    if (mail.length > 0) {
+      this.mail = mail;
+      this.emit('change');
+    }
   }
 
   handleActions(action) {
