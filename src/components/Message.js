@@ -12,17 +12,17 @@ export default class Message extends Component {
     const { message } = this.props;
     const id = message._id;
     const displaying = (this.props.displaying === id);
-    const displayMessage = displaying ? { borderTop: '1px solid red' } : {};
+    const displayMessage = displaying ? { borderLeft: '3px solid gray' } : {};
     const displayDetails = displaying ? { display: 'block' } : { display: 'none' };
     return (
       <div
         className="email"
+        style={displayMessage}
       >
         <div
           className="subject"
           id={id}
           onClick={this.showDetails.bind(this)}
-          style={displayMessage}
         >
           {message.subject}
         </div>
