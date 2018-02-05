@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as MailActions from '../actions/MailActions';
 import Attachments from './Attachments';
+import From from './From';
 import './styles/Message.css';
 
 export default class Message extends Component {
@@ -26,15 +27,12 @@ export default class Message extends Component {
           onClick={this.showDetails.bind(this)}
         >
           {message.subject}
+          <From from={message.from} className="from" onClick={this.showDetails.bind(this)} />
         </div>
         <div
           className="details"
           style={styles.expandDetails}  
         >
-          <div>
-            <span className="title">From:</span>
-            {message.from.text}
-          </div>
           <div>
             {message.text}
           </div>

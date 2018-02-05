@@ -28,3 +28,8 @@
   display: block;
   font-size: 1.1em;
 }
+
+.email .from {
+  float: right;
+  padding-left: 20px;
+}
