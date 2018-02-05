@@ -12,12 +12,13 @@ export default class Message extends Component {
     const { message } = this.props;
     const id = message._id;
     const displaying = (this.props.displaying === id);
-    const expandMessage = displaying ? { borderLeft: '2px solid gray' } : {};
-    const expandDetails = displaying ? { display: 'block' } : { display: 'none' };
+    const styles = {};
+    styles.expandMessage = displaying ? { borderLeft: '2px solid gray' } : {};
+    styles.expandDetails = displaying ? { display: 'block' } : { display: 'none' };
     return (
       <div
         className="email"
-        style={expandMessage}
+        style={styles.expandMessage}
       >
         <div
           className="subject"
@@ -28,7 +29,7 @@ export default class Message extends Component {
         </div>
         <div
           className="details"
-          style={expandDetails}  
+          style={styles.expandDetails}  
         >
           <div>
             <span className="title">From:</span>
