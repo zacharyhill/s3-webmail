@@ -34,8 +34,26 @@
   padding-left: 20px;
 }
 
-.email .date {
+.email .bottomBar {
   padding-top: 15px;
-  text-align: right;
   width: 100%;
+}
+
+.email .bottomBar .date {
+  display: inline-block;
+  text-align: right;
+  width: 50%;
+}
+
+.email .bottomBar .attachments {
+  display: inline-block;
+  width: 50%;
+}
+
+.email .bottomBar .attachments span {
+  padding: 25px;
+}
+
+.email .bottomBar .attachments span .title {
+  padding-bottom: 20px;
 }

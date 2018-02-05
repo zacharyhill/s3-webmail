@@ -37,8 +37,12 @@ export default class Message extends Component {
           <div>
             {message.text}
           </div>
-          <Attachments attachments={message.attachments} />
-          <Date date={message.date} />
+          <div className="bottomBar">
+            <span>
+              <Attachments attachments={message.attachments} />
+              <Date date={message.date} />
+            </span>
+          </div>
         </div>
       </div>
     );

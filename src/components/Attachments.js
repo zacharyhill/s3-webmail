@@ -15,6 +15,8 @@ export default (props) => {
       </div>
     );
   } else {
-    return null;
+    return (
+      <div className="attachments"></div> 
+    );
   }
 }
