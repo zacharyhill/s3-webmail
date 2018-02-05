@@ -12,7 +12,7 @@ export default class Message extends Component {
     const { message } = this.props;
     const id = message._id;
     const displaying = (this.props.displaying === id);
-    const expandMessage = displaying ? { borderLeft: '3px solid gray' } : {};
+    const expandMessage = displaying ? { borderLeft: '2px solid gray' } : {};
     const expandDetails = displaying ? { display: 'block' } : { display: 'none' };
     return (
       <div
