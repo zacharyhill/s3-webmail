@@ -4,17 +4,13 @@
   border-radius: 1px;
   box-shadow: 1px 2px 2px 1px rgb(125, 125, 126);
   margin: 5px auto;
-  padding: 15px;
   max-width: 950px;
   min-width: 450px;
 }
 
-.email:hover, .email.active {
-  background-color: #f9f9f9;
-}
-
 .email .subject {
   cursor: pointer;
+  padding: 15px;
   font-weight: 900;
 }
 

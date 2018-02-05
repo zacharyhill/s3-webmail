@@ -12,7 +12,8 @@ export default class Message extends Component {
     const { message } = this.props;
     const id = message._id;
     const displaying = (this.props.displaying === id);
-    const display = displaying ? { display: 'block' } : { display: 'none' };
+    const displayMessage = displaying ? { 'border-top': '1px solid red' } : {};
+    const displayDetails = displaying ? { display: 'block' } : { display: 'none' };
     return (
       <div
         className="email"
@@ -21,12 +22,13 @@ export default class Message extends Component {
           className="subject"
           id={id}
           onClick={this.showDetails.bind(this)}
+          style={displayMessage}
         >
           {message.subject}
         </div>
         <div
           className="details"
-          style={display}  
+          style={displayDetails}  
         >
           <div>
             <span className="title">From:</span>
