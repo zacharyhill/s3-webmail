@@ -27,7 +27,7 @@ export default class Message extends Component {
           onClick={this.showDetails.bind(this)}
         >
           {message.subject}
-          <From from={message.from} className="from" onClick={this.showDetails.bind(this)} />
+          <From from={message.from} className="from" id={id} />
         </div>
         <div
           className="details"

@@ -13,7 +13,7 @@ export default (props) => {
   }
   const from = name || emailAddress;
   return (
-    <div className="from" data-email-addr={emailAddress}>
+    <div className="from" data-email-addr={emailAddress} id={props.id}>
       {from}
     </div>
   );
