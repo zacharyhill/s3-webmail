@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as MailActions from '../actions/MailActions';
 import Attachments from './Attachments';
+import Date  from './Date';
 import From from './From';
 import './styles/Message.css';
 
@@ -37,6 +38,7 @@ export default class Message extends Component {
             {message.text}
           </div>
           <Attachments attachments={message.attachments} />
+          <Date date={message.date} />
         </div>
       </div>
     );
