@@ -6,6 +6,7 @@
   margin: 5px auto;
   max-width: 950px;
   min-width: 450px;
+  padding: 8px 20px;
 }
 
 .email .subject {
@@ -51,7 +52,7 @@
 }
 
 .email .bottomBar .attachments span {
-  padding: 25px;
+  padding: 25px 10px;
 }
 
 .email .bottomBar .attachments span .title {

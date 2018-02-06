@@ -35,7 +35,9 @@ export default class Message extends Component {
           style={styles.expandDetails}  
         >
           <div>
+          <p>
             {message.text}
+          </p>
           </div>
           <div className="bottomBar">
             <span>
