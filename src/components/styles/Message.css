@@ -42,20 +42,20 @@
   padding-left: 20px;
 }
 
-.email .bottomBar {
-  padding-top: 15px;
-  width: 100%;
-}
-
-.email .bottomBar .attachments {
+.attachments {
   display: inline-block;
   width: 50%;
 }
 
-.email .bottomBar .attachments span {
+.attachments span {
   padding: 25px 10px;
 }
 
-.email .bottomBar .attachments span .title {
+.attachments span .title {
   padding-bottom: 20px;
+}
+
+.email .bottomBar {
+  padding-top: 15px;
+  width: 100%;
 }
