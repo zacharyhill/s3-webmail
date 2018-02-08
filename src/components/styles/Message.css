@@ -18,7 +18,14 @@
 
 .email .details {
   font-family: 'Ubuntu Light';
-  padding: 20px;
+  padding-left: 20px;
+}
+
+.email .details .date {
+  display: inline-block;
+  font-family: 'Ubuntu Mono';
+  letter-spacing: 0.2rem;
+  width: 50%;
 }
 
 .email .details div {
@@ -38,12 +45,6 @@
 .email .bottomBar {
   padding-top: 15px;
   width: 100%;
-}
-
-.email .bottomBar .date {
-  display: inline-block;
-  text-align: right;
-  width: 50%;
 }
 
 .email .bottomBar .attachments {

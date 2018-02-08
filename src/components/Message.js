@@ -34,6 +34,7 @@ export default class Message extends Component {
           className="details"
           style={styles.expandDetails}  
         >
+          <Date date={message.date} />
           <div>
           <p>
             {message.text}
@@ -42,7 +43,6 @@ export default class Message extends Component {
           <div className="bottomBar">
             <span>
               <Attachments attachments={message.attachments} />
-              <Date date={message.date} />
             </span>
           </div>
         </div>
