@@ -54,6 +54,7 @@ export default class Message extends Component {
             replying={this.props.replying}
             id={id}
             from={message.from}
+            msg={message}
           />
         </div>
       </div>

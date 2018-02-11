@@ -63,9 +63,19 @@ export function getNewMail() {
   });
 }
 
+export function sendMail(msg) {
+  API.post('mail', msg).then((msg) => {
+    // send mail - store action
+    console.log('then: ', msg);
+  }).catch((error) => {
+    // error sending mail - store action
+    console.log('catch: ', error);
+  })
+}
+
 export function showReply(id) {
   dispatch({
     type: 'SHOW_REPLY',
-    id
+    id,
   })
 }
