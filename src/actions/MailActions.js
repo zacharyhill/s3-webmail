@@ -19,6 +19,13 @@ export function createMail(text) {
   });
 }
 
+export function hideActions(id) {
+  dispatch({
+    type: 'HIDE_ACTIONS',
+    id,
+  });
+}
+
 export function toggleDetails(id) {
   dispatch({
     type: 'TOGGLE_DETAILS',
@@ -54,4 +61,11 @@ export function getNewMail() {
       err,
     });
   });
+}
+
+export function showReply(id) {
+  dispatch({
+    type: 'SHOW_REPLY',
+    id
+  })
 }

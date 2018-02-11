@@ -11,6 +11,8 @@ class MailStore extends EventEmitter {
     this.fetched = false;
     this.err = null;
     this.displaying = null;
+    this.replying = null;
+    this.hidingActions = null;
   }
 
   // this is a dummy function that shows us how to do this for later
@@ -40,15 +42,23 @@ class MailStore extends EventEmitter {
       fetched: this.fetched,
       err: this.err,
       displaying: this.displaying,
+      replying: this.replying,
+      hideActions: this.hidingActions,
     }
   }
 
-  getNew() {
-    // use axios method when we get to async redux in videos
+  hideActions(id) {
+    this.hidingActions = id;
+    this.emit('change');
   }
 
   receiveMail(mail) {
     this.mail = mail;
+    this.emit('change');
+  }
+
+  showReply(id) {
+    this.replying = id;
     this.emit('change');
   }
 
@@ -65,6 +75,14 @@ class MailStore extends EventEmitter {
       }
       case 'FETCH_MAIL_ERROR': {
         this.fetchMailError(action.err);
+        break;
+      }
+      case 'HIDE_ACTIONS': {
+        this.hideActions(action.id);
+        break;
+      }
+      case 'SHOW_REPLY': {
+        this.showReply(action.id);
         break;
       }
       case 'TOGGLE_DETAILS': {

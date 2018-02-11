@@ -3,6 +3,8 @@ import * as MailActions from '../actions/MailActions';
 import Attachments from './Attachments';
 import Date  from './Date';
 import From from './From';
+import Reply from './Reply';
+import ReplyTo from './ReplyTo';
 import './styles/Message.css';
 
 export default class Message extends Component {
@@ -14,9 +16,11 @@ export default class Message extends Component {
     const { message } = this.props;
     const id = message._id;
     const displaying = (this.props.displaying === id);
+    const hideActions = (this.props.hideActions === id);
     const styles = {};
     styles.expandMessage = displaying ? { borderLeft: '2px solid gray' } : {};
     styles.expandDetails = displaying ? { display: 'block' } : { display: 'none' };
+    styles.displayActions = hideActions ? { display: 'none' } : { display: 'block' };
     return (
       <div
         className="email"
@@ -41,9 +45,16 @@ export default class Message extends Component {
             </p>
           </div>
           <Attachments attachments={message.attachments} />
-          <div className="bottomBar">
-            
+          <div className="bottomBar" style={styles.displayActions}>
+            <ReplyTo
+              id={id}
+            />
           </div>
+          <Reply
+            replying={this.props.replying}
+            id={id}
+            from={message.from}
+          />
         </div>
       </div>
     );

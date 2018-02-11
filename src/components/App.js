@@ -36,7 +36,11 @@ export default class App extends Component {
     const { mail } = this.state;
 
     const MailList = mail.map((msg) => {
-      return <Message key={msg._id} message={msg} displaying={this.state.displaying} />;
+      return <Message
+              key={msg._id}
+              message={msg}
+              {...this.state}
+            />;
     });
 
     return (
